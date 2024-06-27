@@ -75,11 +75,48 @@ study_domains = [
     {"question": "What is the eighth domain?: ", "answer": "software development security"}
 ]
 
+#Randomize the order later
+
 study_domain_definitions = [
     #p4q1
+    {"question": "The ___ domain is focused on defining security goals and objectives, risk mitigation, compliance, business continuity, and legal regulation: ", "answer": "1st"},
+    #p4q2
+    {"question": "The ___ domain is focused on securing digital and physical assets. It's also related to the storage, maintenance, retention, and destruction of data: ", "answer": "2nd"},
+    #p4q3
+    {"question": "The ___ domain is focused on optimizing data security by ensuring effective tools, systems, and processes are in place to protect an organization's assets and data: ", "answer": "3rd"},
+    #p4q4
+    {"question": "The ___ domain is focused on managing and securing physical networks and wireless communication: ", "answer": "4th"},
+    #p4q5
+    {"question": "The ___ domain is focused on access and authorization to keep data secure, by making sure users follow established policies to control and manage assets: ", "answer": "5th"},
+    #p4q6
+    {"question": "The ___ domain is focused on conducting security control testing, collecting and analyzing data, and conducting security audits to monitor for risks, threats, and vulnerabilities: ", "answer": "6th"},
+    #p4q7
+    {"question": "The ___ domain is focused on conducting investigations and implementing preventative measures: ", "answer": "7th"},
+    #p4q8
+    {"question": "The ___ domain is focused on using secure coding practices: ", "answer": "8th"}
 ]
 
 #calling the function here, returning results per question answered
-for qna in study_qna:
-    result = check_answer(qna["question"], qna["answer"])
-    print(result)
+def qna_qna(study):    
+    for qna in study:
+        result = check_answer(qna["question"], qna["answer"])
+        print(result)
+
+def main():
+    while True:
+        choose_test = input("Choose which test(enter 1,2,3,4)")
+        if choose_test == "1":
+            qna_qna(study_qna)
+            break
+        elif choose_test == "2":
+            qna_qna(study_qnaTwo)
+            break
+        elif choose_test == "3":
+            qna_qna(study_domains)
+            break
+        elif choose_test == "4":
+            qna_qna(study_domain_definitions)
+            break
+
+if __name__ == "__main__":
+    main()
