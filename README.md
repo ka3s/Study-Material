@@ -1,5 +1,5 @@
 # Study-Material
-Python flash card type quiz study help
+Flash cards written in python to help study and get better at python at the same time
 
 Selection 1 is basic definitions 1
 
